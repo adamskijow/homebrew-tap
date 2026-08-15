@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: MIT
 #
-# Homebrew cask for Hearth. Bump the version and sha256 (the DMG's, from
-# scripts/release.sh output) for each release.
+# Homebrew cask for Hearth. The sync-hearth workflow updates the version and
+# sha256 from the latest signed GitHub release.
 #
 # Install from a tap with:
 #   brew install --cask adamskijow/tap/hearth
@@ -16,6 +16,7 @@ cask "hearth" do
   homepage "https://github.com/adamskijow/Hearth"
 
   depends_on macos: :sonoma
+  depends_on arch: :arm64
 
   app "Hearth.app"
   # The app bundle is also the `hearth` CLI (doctor, status, setup, wait-ready),
